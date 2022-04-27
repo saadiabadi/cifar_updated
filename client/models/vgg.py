@@ -60,7 +60,7 @@ def create_seed_model(input_shape=(32,32,3), dimension='VGG16', trainedLayers=0)
                       optimizer=opt, metrics=['accuracy'])
 
         print(" --------------------------------------- ")
-        print(" ------------------MODEL CREATED------------------ ")
+        print(" ------------------Partial MODEL CREATED------------------ ")
         print(" --------------------------------------- ")
 
     else:
@@ -82,34 +82,11 @@ def create_seed_model(input_shape=(32,32,3), dimension='VGG16', trainedLayers=0)
         opt = tensorflow.keras.optimizers.Adam(learning_rate=0.001)
         model.compile(loss='categorical_crossentropy',
                       optimizer=opt, metrics=['accuracy'])
+        print(" --------------------------------------- ")
+        print(" ------------------Full MODEL CREATED------------------ ")
+        print(" --------------------------------------- ")
 
     return model
-
-
-### generate a full trainable seed model
-
-# def create_seed_model(input_shape=(32, 32, 3), dimension='VGG16'):
-#     num_classes = 10
-#     model = Sequential()
-#     model.add(keras.Input(shape=input_shape))
-#     for x in cfg[dimension]:
-#         if x == 'M':
-#             model.add(MaxPooling2D(pool_size=(2, 2)))
-#         else:
-#             print("trani: ", x)
-#             model.add(Conv2D(x, (3, 3), padding='same', trainable=True))
-#             model.add(BatchNormalization(trainable=True))
-#             model.add(Activation(activations.relu))
-#
-#     # model.add(Flatten())
-#     model.add(AveragePooling2D(pool_size=(1, 1)))
-#     model.add(Flatten())
-#     model.add(Dense(num_classes, activation='softmax'))
-#     opt = keras.optimizers.Adam(learning_rate=0.001)
-#     model.compile(loss='categorical_crossentropy',
-#                   optimizer=opt, metrics=['accuracy'])
-#
-#     return model
 
 
 

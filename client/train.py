@@ -13,36 +13,9 @@ from sklearn.model_selection import train_test_split
 tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 
 
-# def ps_util_monitor(round):
-#     global running
-#     running = True
-#     currentProcess = psutil.Process()
-#     cpu_ = []
-#     memo_ = []
-#     time_ = []
-#     report = {}
-#     # start loop
-#     while running:
-#         cpu_percents = currentProcess.cpu_percent(interval=1)
-#         mem_percents = currentProcess.memory_percent()
-#         ps_time = str(datetime.now())
-#         cpu_.append(cpu_percents)
-#         memo_.append(mem_percents)
-#         time_.append(ps_time)
-#
-#     report['round'] = round
-#     report['cpu'] = cpu_
-#     report['memory'] = memo_
-#     report['time'] = time_
-#
-#     with open('/app/resources.txt', '+a') as f:
-#         print(report, file=f)
-#     # with open('/app/resources.txt', '+a')as fh:
-#     #     fh.write(json.dumps(report))
-
 
 #################################################################################
-#################### new way to monitor resourcse
+#################### Resources monitoring
 
 def get_cpu_usage_pct():
     """
@@ -84,9 +57,6 @@ def get_ram_usage_pct():
     """
     return psutil.virtual_memory().percent
 
-###########
-
-
 def ps_util_monitor(round):
     global running
     running = True
@@ -114,8 +84,7 @@ def ps_util_monitor(round):
 
     with open('/app/resources.txt', '+a') as f:
         print(report, file=f)
-    # with open('/app/resources.txt', '+a')as fh:
-    #     fh.write(json.dumps(report))
+
 
 #################################################################################
 
@@ -147,29 +116,23 @@ def train(model, data, settings):
         y_train = pickle.loads(fh.read())
 
 
-    # Xt, X, Yt, Y = train_test_split(x_train, y_train, test_size=settings['testSize'])
-
     print(" --------------------------------------- ")
     print("x_train shape: : ", x_train.shape)
     print(" --------------------------------------- ")
 
-    # start_monitor(round)
-    # tic()
+    start_monitor(round)
+    tic()
 
     model.fit(x_train, y_train, batch_size=settings['batch_size'], epochs=settings['epochs'], verbose=True)
 
-    # elapsed = toc()
-    #
-    # stop_monitor()
-    # round += 1
-    #
-    # with open('/app/time.txt', '+a') as f:
-    #     print(elapsed, file=f)
+    elapsed = toc()
 
+    stop_monitor()
+    round += 1
 
+    with open('/app/time.txt', '+a') as f:
+        print(elapsed, file=f)
 
-    # print("x_train shape: : ", x_train.shape)
-    # model.fit(x_train, y_train, batch_size=settings['batch_size'], epochs=settings['epochs'], verbose=True)
 
     print("-- TRAINING COMPLETED --", flush=True)
     return model
@@ -184,12 +147,6 @@ if __name__ == '__main__':
         except yaml.YAMLError as e:
             raise(e)
 
-    # with open('../data/layers.yaml', 'r') as fh1:
-    #         try:
-    #             layers = dict(yaml.safe_load(fh1))
-    #         except yaml.YAMLError as e:
-    #             raise(e)
-
     from fedn.utils.kerashelper import KerasHelper
     from models.vgg import create_seed_model
 
@@ -199,11 +156,10 @@ if __name__ == '__main__':
     helper = KerasHelper()
     weights = helper.load_model(sys.argv[1])
 
-    model = create_seed_model(dimension=settings['model_dimension'],trainedLayers=settings['trained_Layers']) #,trainL=layers['trainedLayers'])
+    model = create_seed_model(dimension=settings['model_dimension'],trainedLayers=settings['trained_Layers'])
     model.set_weights(weights)
     import os
     arr = os.listdir('/app/data')
-    print("SADI ------------------------ MAIN --------------- SADI")
     print(arr)
     model = train(model, '../data', settings)
     helper.save_model(model.get_weights(), sys.argv[2])

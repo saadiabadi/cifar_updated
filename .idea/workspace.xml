@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="13d0f010-2f86-4b1a-9915-32b3815aa1b5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/client.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/Load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/Load_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/models/vgg.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/models/vgg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/read_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/settings.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/client/settings.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/settings.yaml.old.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/validate.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/validate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client_settings.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.dev.yaml.old" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.dev_oneClient.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extra-hosts.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/extra-hosts.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init_requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package/package1.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package/package13.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package/package3.tar.gz" beforeDir="false" afterPath="$PROJECT_DIR$/package/package.tar.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package/package6.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package/package9.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package/package_Salman_withoutPsutil.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package/seed.npz" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="28N9qyChc9kaq8rKT1crnbmeIaE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="13d0f010-2f86-4b1a-9915-32b3815aa1b5" name="Default Changelist" comment="" />
+      <created>1651046370934</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1651046370934</updated>
+      <workItem from="1651046372262" duration="3678000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
